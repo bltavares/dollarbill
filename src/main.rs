@@ -20,6 +20,6 @@ fn main() {
             chain.feed_str(&word);
         }
     }
-    let words : Vec<String> = (1..100).map(|_| chain.generate_str()).collect();
+    let words : Vec<String> = chain.str_iter_for(100).collect();
     println!("{}", words.join(" "));
 }

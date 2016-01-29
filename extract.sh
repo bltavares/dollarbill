@@ -4,7 +4,7 @@
 [ -z "$2" ] && echo "Gimme a query" && exit 1
 
 : > dump.raw
-for file in $(ag Subject: $1 | ag $2 | cut -d: -f1,2); do
+for file in $(ag Subject: "$1" | ag "$2" | cut -d: -f1,2); do
   mu extract --parts=1 --overwrite $file
   awk '/^[^>]/ { print }' 1.msgpart |\
     awk 'NR==1,/--/' |\
