@@ -5,9 +5,9 @@ use std::fs::File;
 use markov::Chain;
 
 fn read_file_or_die(path: &str) -> String {
-    let mut file = File::open(path).unwrap();
+    let mut file = File::open(path).expect(&format!("The file {} was not found", path));
     let mut buffer = String::new();
-    file.read_to_string(&mut buffer).unwrap();
+    file.read_to_string(&mut buffer).expect(&format!("Unable to read content of the file {} into the buffer", path));
     buffer
 }
 
