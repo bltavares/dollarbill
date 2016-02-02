@@ -11,15 +11,19 @@ fn read_file_or_die(path: &str) -> String {
     buffer
 }
 
+const PHRASE_TERMINATOR: &'static str = ".";
+
 fn main() {
     let content = read_file_or_die("dump");
 
     let mut chain = Chain::new();
     for line in content.lines() {
-        for word in line.split_whitespace() {
-            chain.feed_str(&word);
-        }
+        let words: Vec<String> = line.split(PHRASE_TERMINATOR)
+                                     .flat_map(|x| x.split_whitespace())
+                                     .map(|x| x.to_owned())
+                                     .collect();
+        chain.feed(words);
     }
-    let words : Vec<String> = chain.str_iter_for(100).collect();
+    let words: Vec<String> = chain.str_iter_for(100).collect();
     println!("{}", words.join(" "));
 }
