@@ -23,7 +23,7 @@ bash extract.sh ~/path/to/mail/dir 'What about this subject'
 
 Download the binary to generate content and run
 ```
-curl https://github.com/bltavares/dollarbill/releases/download/Latests/dollarbill > dollarbill
+curl -L https://github.com/bltavares/dollarbill/releases/download/Latests/dollarbill > dollarbill
 chmod +x dollarbill
 ./dollarbill
 ```
