@@ -2,6 +2,7 @@
 name = "dollarbill"
 version = "0.1.0"
 dependencies = [
+ "language_detector 0.1.0 (git+https://github.com/bltavares/language_detector)",
  "markov 0.0.31 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -13,6 +14,11 @@ dependencies = [
  "winapi 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "winapi-build 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
+
+[[package]]
+name = "language_detector"
+version = "0.1.0"
+source = "git+https://github.com/bltavares/language_detector#00cc0fda86aa7013e9082574afb43fac2be0c8b9"
 
 [[package]]
 name = "libc"

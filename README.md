@@ -37,3 +37,6 @@ cargo build --release
 ```
 
 The binary is on `target/release/dollarbill`.
+
+It is possible to control wheter to filter out English phrases with the
+environment variables `FILTER_ENGLISH` or `ONLY_ENGLISH` being set.

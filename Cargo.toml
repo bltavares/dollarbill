@@ -5,3 +5,7 @@ version = "0.1.0"
 
 [dependencies]
 markov = "0.0.31"
+
+[dependencies.language_detector]
+git = "https://github.com/bltavares/language_detector"
+optional = false
